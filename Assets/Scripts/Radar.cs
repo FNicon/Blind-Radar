@@ -34,6 +34,10 @@ public class Radar : MonoBehaviour {
                 enemyRadarListener.ShowEnemy();
             else
                 Debug.Log("Enemy gak ada radar listenernya");
+			EnemyBehaviour enemyBehave = other.GetComponent<EnemyBehaviour> ();
+			if (enemyBehave) {
+				enemyBehave.RandomRun ();
+			}
         }
 	}
 }
