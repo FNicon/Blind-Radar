@@ -8,13 +8,18 @@ using DG.Tweening;
 public class SubmarineControl : MonoBehaviour {
     public Slider horizontalAccelerationSlider;
     public Slider verticalAccelerationSlider;
+    public Image healthFill;
     public float dragDelay = 5f;
+    public float maxHealth = 100f;
+
     private Rigidbody2D rb;
     private float horizontalAcceleration;
     private float verticalAcceleration;
+    private float currentHealth;
 
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
+        currentHealth = maxHealth;
 	}
 
 	void Update () {
@@ -30,5 +35,11 @@ public class SubmarineControl : MonoBehaviour {
     public void ChangeVerticalAcceleration()
     {
         DOTween.To(() => verticalAcceleration, x => verticalAcceleration = x, verticalAccelerationSlider.value, dragDelay);
+    }
+
+    public void ChangeHealth(float val)
+    {
+        currentHealth += val;
+        healthFill.fillAmount = currentHealth / 100f;
     }
 }
