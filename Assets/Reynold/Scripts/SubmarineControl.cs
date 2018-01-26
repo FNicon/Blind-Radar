@@ -47,6 +47,6 @@ public class SubmarineControl : MonoBehaviour {
 
     public void FireTorpedo()
     {
-
+        Instantiate(torpedo, torpedoSpawnPoint);
     }
 }
