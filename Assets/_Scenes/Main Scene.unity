@@ -2660,7 +2660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ed54511dd29d8df428807f81cc87e845, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 2052276597}
+  radarCollider: {fileID: 2052276597}
   speed: 2
   maxRadius: 50
   enemyTag: EnemyRadar
