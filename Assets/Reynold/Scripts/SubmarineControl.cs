@@ -11,6 +11,8 @@ public class SubmarineControl : MonoBehaviour {
     public Image healthFill;
     public float dragDelay = 5f;
     public float maxHealth = 100f;
+    public GameObject torpedo;
+    public Transform torpedoSpawnPoint;
 
     private Rigidbody2D rb;
     private float horizontalAcceleration;
@@ -41,5 +43,10 @@ public class SubmarineControl : MonoBehaviour {
     {
         currentHealth += val;
         healthFill.fillAmount = currentHealth / 100f;
+    }
+
+    public void FireTorpedo()
+    {
+
     }
 }
