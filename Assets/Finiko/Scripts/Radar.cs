@@ -4,8 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 
 public class Radar : MonoBehaviour {
-
-	public CircleCollider2D collider;
+	public CircleCollider2D radarCollider;
 	public float speed;
 	public float maxRadius;
 	public string enemyTag;
@@ -22,11 +21,11 @@ public class Radar : MonoBehaviour {
 
 	public void UsingRadar(){
 		ResetRadar ();
-		DOTween.To(() => collider.radius, x => collider.radius = x, maxRadius, speed);
+		DOTween.To(() => radarCollider.radius, x => radarCollider.radius = x, maxRadius, speed);
 	}
 	public void ResetRadar() {
-		if (collider.radius >= maxRadius) {
-			collider.radius = 0;
+		if (radarCollider.radius >= maxRadius) {
+			radarCollider.radius = 0;
 		}
 	}
 	public bool isDetectEnemy() {
