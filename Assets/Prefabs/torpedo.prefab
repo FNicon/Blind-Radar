@@ -42,7 +42,7 @@ GameObject:
   - component: {fileID: 61929296862650310}
   m_Layer: 0
   m_Name: torpedo
-  m_TagString: Untagged
+  m_TagString: Torpedo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -131,7 +131,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   incSpeed: 0.5
-  maxSpeed: 50
+  maxSpeed: 10
 --- !u!198 &198741214796167488
 ParticleSystem:
   m_ObjectHideFlags: 1

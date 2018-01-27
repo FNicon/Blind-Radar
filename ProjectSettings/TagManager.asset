@@ -7,6 +7,8 @@ TagManager:
   - Enemy
   - EnemyRadar
   - Boundary
+  - Position
+  - Torpedo
   layers:
   - Default
   - TransparentFX

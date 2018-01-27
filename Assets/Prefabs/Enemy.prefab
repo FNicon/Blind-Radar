@@ -47,6 +47,34 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!1 &1761752654014962
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4063433937156600}
+  m_Layer: 9
+  m_Name: Enemy TorpedoSpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4063433937156600
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1761752654014962}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4485519704914826}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4460792089498784
 Transform:
   m_ObjectHideFlags: 1
@@ -55,7 +83,7 @@ Transform:
   m_GameObject: {fileID: 1208747504952452}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 20, y: 20, z: 1}
+  m_LocalScale: {x: 40, y: 40, z: 1}
   m_Children: []
   m_Father: {fileID: 4485519704914826}
   m_RootOrder: 0
@@ -71,6 +99,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4460792089498784}
+  - {fileID: 4063433937156600}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -131,10 +160,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 5
+  shootDelay: 5
   runProbability: 7
   moveSpeed: 3
-  player: {fileID: 0}
-  gun: {fileID: 0}
+  torpedo: {fileID: 1927390196246070, guid: 2132feb0fe5b2964ab40ce3e2fb283db, type: 2}
+  torpedoSpawnPoint: {fileID: 4063433937156600}
+  playerTag: Player
+  shootThreshold: 1
 --- !u!114 &114497329524264500
 MonoBehaviour:
   m_ObjectHideFlags: 1

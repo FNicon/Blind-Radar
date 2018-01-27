@@ -114,7 +114,7 @@ public class Fish : MonoBehaviour {
 	}
 
 	protected void OnTriggerEnter2D (Collider2D other) {
-		if (other.GetComponent<SubmarineControl> ()) {
+		if (other.gameObject.CompareTag("Player") || other.gameObject.CompareTag("Torpedo")) {
 			StopMoving ();
 			RunFromObject (other.transform.position);
 		}
