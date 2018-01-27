@@ -21,7 +21,7 @@ GameObject:
   - component: {fileID: 4959452131130996}
   - component: {fileID: 198741214796167488}
   - component: {fileID: 199523027914431496}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Particle System
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -41,7 +41,7 @@ GameObject:
   - component: {fileID: 50920857083285824}
   - component: {fileID: 61929296862650310}
   - component: {fileID: 82565532792296512}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Enemy Torpedo
   m_TagString: EnemyTorpedo
   m_Icon: {fileID: 0}
@@ -213,6 +213,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   incSpeed: 0.5
   maxSpeed: 10
+  damage: 20
+  hitfx: {fileID: 1230249224706464, guid: daf59d2a12ce74944a4dd0cd35190ebd, type: 2}
 --- !u!198 &198741214796167488
 ParticleSystem:
   m_ObjectHideFlags: 1

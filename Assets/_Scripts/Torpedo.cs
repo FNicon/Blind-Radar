@@ -5,6 +5,8 @@ using UnityEngine;
 public class Torpedo : MonoBehaviour {
 
 	public float incSpeed = 1.0f, maxSpeed = 10.0f;
+    public float damage;
+    public GameObject hitfx;
 	private Rigidbody2D rigidBody;
 	private GameObject particle;
 
@@ -23,4 +25,14 @@ public class Torpedo : MonoBehaviour {
 		if (rigidBody.velocity.magnitude < maxSpeed)
 			rigidBody.AddForce (transform.right * -incSpeed * 50);
 	}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Player"))
+        {
+            collision.GetComponent<SubmarineControl>().ChangeHealth(-damage);
+            Instantiate(hitfx, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+        }
+    }
 }
