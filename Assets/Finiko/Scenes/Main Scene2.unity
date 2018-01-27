@@ -716,9 +716,9 @@ MonoBehaviour:
   movementDelay: 5
   runProbability: 7
   moveSpeed: 3
-  player: {fileID: 1906974053}
   torpedo: {fileID: 1927390196246070, guid: 2132feb0fe5b2964ab40ce3e2fb283db, type: 2}
   torpedoSpawnPoint: {fileID: 1281695575}
+  playerTag: Player
 --- !u!50 &410707139
 Rigidbody2D:
   serializedVersion: 4
@@ -2860,7 +2860,7 @@ GameObject:
   - component: {fileID: 1906974056}
   m_Layer: 10
   m_Name: Submarine
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2956,6 +2956,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f1c67876ad1cc4086e762a0cfc8277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initVelocity: {x: 0, y: 0}
   horizontalAccelerationSlider: {fileID: 1119571409}
   verticalAccelerationSlider: {fileID: 367659337}
   healthFill: {fileID: 22160533}
