@@ -49,7 +49,7 @@ public class SubmarineControl : MonoBehaviour {
 
     public void FireTorpedo()
     {
-        Instantiate(torpedo, torpedoSpawnPoint);
+        Instantiate(torpedo, torpedoSpawnPoint.position, torpedoSpawnPoint.rotation);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

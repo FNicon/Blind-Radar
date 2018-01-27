@@ -214,7 +214,7 @@ MonoBehaviour:
   incSpeed: 0.5
   maxSpeed: 10
   damage: 0
-  hitfx: {fileID: 0}
+  hitfx: {fileID: 1230249224706464, guid: daf59d2a12ce74944a4dd0cd35190ebd, type: 2}
 --- !u!198 &198741214796167488
 ParticleSystem:
   m_ObjectHideFlags: 1

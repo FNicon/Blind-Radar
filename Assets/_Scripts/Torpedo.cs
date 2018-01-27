@@ -33,6 +33,11 @@ public class Torpedo : MonoBehaviour {
             collision.GetComponent<SubmarineControl>().ChangeHealth(-damage);
             Instantiate(hitfx, transform.position, transform.rotation);
             Destroy(this.gameObject);
+        } else if (collision.gameObject.CompareTag("Enemy"))
+        {
+            Instantiate(hitfx, transform.position, transform.rotation);
+            Destroy(this.gameObject);
+            Destroy(collision.gameObject);
         }
     }
 }
