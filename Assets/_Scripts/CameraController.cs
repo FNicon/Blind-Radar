@@ -39,10 +39,13 @@ public class CameraController : Singleton<CameraController> {
 
     public void Unfollow()
     {
-        ProCamera2D.Instance.RemoveAllCameraTargets();
-        ProCamera2D.Instance.AddCameraTarget(player, 1f, 1f, 0, new Vector2(4f,0));
-        ProCamera2D.Instance.HorizontalFollowSmoothness = 2.5f;
-        ProCamera2D.Instance.VerticalFollowSmoothness = 1.5f;
-        ProCamera2D.Instance.Reset();
+        if(lastTorpedo != null)
+        {
+            ProCamera2D.Instance.RemoveAllCameraTargets();
+            ProCamera2D.Instance.AddCameraTarget(player, 1f, 1f, 0, new Vector2(4f, 0));
+            ProCamera2D.Instance.HorizontalFollowSmoothness = 2.5f;
+            ProCamera2D.Instance.VerticalFollowSmoothness = 1.5f;
+            ProCamera2D.Instance.Reset();
+        }
     }
 }

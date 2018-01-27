@@ -23,7 +23,7 @@ public class SubmarineControl : MonoBehaviour {
     private float currentHealth;
     private Transform lastTorpedo;
 
-	public NotificationTrigger notificationHurt;
+	//public NotificationTrigger notificationHurt;
 
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -53,20 +53,16 @@ public class SubmarineControl : MonoBehaviour {
 
     public void ChangeHealth(float val)
     {
-		notificationHurt.TriggerNotification (1);
+		//notificationHurt.TriggerNotification (1);
         currentHealth += val;
         healthFill.fillAmount = currentHealth / 100f;
+        KruManager.Instance.ShipDamaged();
     }
 
     public void FireTorpedo()
     {
         GameObject g = Instantiate(torpedo, torpedoSpawnPoint.position, torpedoSpawnPoint.rotation) as GameObject;
         CameraController.Instance.SetLastTorpedo(g.transform);
-    }
-
-    void OnMouseDown()
-    {
-        submarineInterior.SetActive(true);
     }
 
 }

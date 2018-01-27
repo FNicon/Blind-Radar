@@ -30,6 +30,7 @@ public class Torpedo : MonoBehaviour {
         yield return new WaitForSeconds(lifetime);
         Instantiate(hitfx, transform.position, transform.rotation);
         ProCamera2DShake.Instance.Shake(0);
+        CameraController.Instance.Unfollow();
         Destroy(this.gameObject);
     }
 
@@ -40,12 +41,14 @@ public class Torpedo : MonoBehaviour {
             collision.GetComponent<SubmarineControl>().ChangeHealth(-damage);
             Instantiate(hitfx, transform.position, transform.rotation);
             ProCamera2DShake.Instance.Shake(0);
+            CameraController.Instance.Unfollow();
             Destroy(this.gameObject);
         } else if (collision.gameObject.CompareTag("Enemy"))
         {
             Instantiate(hitfx, transform.position, transform.rotation);
             ProCamera2DShake.Instance.Shake(0);
             collision.GetComponent<EnemyBehaviour>().Dead();
+            CameraController.Instance.Unfollow();
             Destroy(this.gameObject);
         }
     }

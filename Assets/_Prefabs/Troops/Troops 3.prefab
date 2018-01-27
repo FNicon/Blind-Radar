@@ -560,7 +560,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radarRenderer: {fileID: 212589809876012452}
   enemyRenderer: {fileID: 212447730332591256}
-  showTime: 5
+  showTime: 10
 --- !u!114 &114056757776894234
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -683,7 +683,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radarRenderer: {fileID: 212766732204206830}
   enemyRenderer: {fileID: 212004212491655934}
-  showTime: 5
+  showTime: 10
 --- !u!114 &114193554316399054
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -697,7 +697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radarRenderer: {fileID: 212485538287644538}
   enemyRenderer: {fileID: 212232541805072242}
-  showTime: 5
+  showTime: 10
 --- !u!114 &114377468250949500
 MonoBehaviour:
   m_ObjectHideFlags: 1

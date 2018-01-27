@@ -500,7 +500,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radarRenderer: {fileID: 212345136097986180}
   enemyRenderer: {fileID: 212263927377160170}
-  showTime: 5
+  showTime: 10
 --- !u!114 &114469055121307562
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -651,7 +651,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radarRenderer: {fileID: 212652672740134528}
   enemyRenderer: {fileID: 212593535516342228}
-  showTime: 5
+  showTime: 10
 --- !u!114 &114876985319601570
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -222,7 +222,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   radarRenderer: {fileID: 212640949384315376}
   enemyRenderer: {fileID: 212686110262408066}
-  showTime: 5
+  showTime: 10
 --- !u!114 &114227837540910370
 MonoBehaviour:
   m_ObjectHideFlags: 1
