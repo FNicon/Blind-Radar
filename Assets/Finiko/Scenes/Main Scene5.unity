@@ -499,6 +499,10 @@ MonoBehaviour:
     - Driver Area is Damaged!!
     - Gunner Area is Damaged!!
     - Engine Area is Damaged!!
+    charImage:
+    - {fileID: 21300000, guid: 4505dbe42b8d26941b4f83cb0f1b453c, type: 3}
+    - {fileID: 21300000, guid: 74c8879ca22b03c4bb912a5559c63232, type: 3}
+    - {fileID: 21300000, guid: 74c8879ca22b03c4bb912a5559c63232, type: 3}
     notificationDuration: 3
   notificationScript: {fileID: 115906318}
 --- !u!114 &115906318
@@ -513,6 +517,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   notificationText: {fileID: 912744603}
+  notificationChar: {fileID: 362298677}
 --- !u!4 &115906319
 Transform:
   m_ObjectHideFlags: 0
@@ -1103,14 +1108,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 756ad816274a7984bb7b5d5db38df21c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -5603,7 +5608,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shader: {fileID: 4800000, guid: 22fe62a5d4de91a4995c1363cbc2492e, type: 3}
   Mode: 1
-  Timer: 69.120125
+  Timer: 87.454605
   Speed: 1
   Frequency: 12
   Amplitude: 0.01
