@@ -8,11 +8,13 @@ public class EnemyBehaviour : MonoBehaviour {
 	public int runProbability;
 	private Rigidbody2D enemyBody;
 	public float moveSpeed;
-	public Transform player;
+	private GameObject player;
 	public GameObject torpedo;
 	public Transform torpedoSpawnPoint;
+	public string playerTag;
 
 	void Start () {
+		player = GameObject.FindGameObjectWithTag (playerTag);
 		enemyBody = gameObject.GetComponent<Rigidbody2D> ();
 		StartCoroutine (Movement());
 	}
@@ -45,9 +47,8 @@ public class EnemyBehaviour : MonoBehaviour {
 	}
 
 	public void FireTorpedo() {
-		//Quaternion torpedoRotation;
-		//torpedoRotation.Set (0, 0, 0, 0);
 		//torpedoRotation.SetFromToRotation (gameObject.transform.position, player.transform.position);
 		Instantiate (torpedo, torpedoSpawnPoint);
+		//Instantiate (torpedo, torpedoSpawnPoint,Quaternion.SetFromToRotation (gameObject.transform.position, player.transform.position));
 	}
 }
