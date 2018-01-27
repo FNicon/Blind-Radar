@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using DG.Tweening;
+using Com.LuisPedroFonseca.ProCamera2D;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class SubmarineControl : MonoBehaviour {
@@ -56,6 +57,7 @@ public class SubmarineControl : MonoBehaviour {
     public void FireTorpedo()
     {
         GameObject g = Instantiate(torpedo, torpedoSpawnPoint.position, torpedoSpawnPoint.rotation) as GameObject;
-        lastTorpedo = g.transform;
+        CameraController.Instance.SetLastTorpedo(g.transform);
     }
+    
 }
