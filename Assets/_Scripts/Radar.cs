@@ -7,6 +7,8 @@ public class Radar : MonoBehaviour {
 	public float speed;
 	public float maxRadius;
 	public string enemyTag;
+    public GameObject radarFx;
+    public DOTweenAnimation radarUIAnim;
 
 	void Start () {
 		
@@ -20,6 +22,9 @@ public class Radar : MonoBehaviour {
 		ResetRadar ();
 		GetComponent<AudioSource> ().Play ();
 		DOTween.To(() => radarCollider.radius, x => radarCollider.radius = x, maxRadius, speed);
+        Instantiate(radarFx, transform.position, transform.rotation);
+        radarUIAnim.DORestart();
+        radarUIAnim.DOPlay();
 		//radarSprite.transform.DOScale (new Vector3 (maxRadius, maxRadius), speed);
 	}
 
