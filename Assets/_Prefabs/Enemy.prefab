@@ -159,10 +159,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6421aae1eb268154eb3d4a2c3895df47, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementDelay: 5
-  shootDelay: 10
-  runProbability: 7
-  moveSpeed: 3
+  movementDelay: 0
+  shootDelay: 0
+  runProbability: 0
+  moveSpeed: 0
   torpedo: {fileID: 1927390196246070, guid: f10bd04528ae1f848b565f42fed27f16, type: 2}
   torpedoSpawnPoint: {fileID: 4063433937156600}
   playerTag: Player

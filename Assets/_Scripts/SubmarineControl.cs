@@ -19,6 +19,7 @@ public class SubmarineControl : MonoBehaviour {
     private float horizontalAcceleration;
     private float verticalAcceleration;
     private float currentHealth;
+    private Transform lastTorpedo;
 
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
@@ -54,6 +55,7 @@ public class SubmarineControl : MonoBehaviour {
 
     public void FireTorpedo()
     {
-        Instantiate(torpedo, torpedoSpawnPoint.position, torpedoSpawnPoint.rotation);
+        GameObject g = Instantiate(torpedo, torpedoSpawnPoint.position, torpedoSpawnPoint.rotation) as GameObject;
+        lastTorpedo = g.transform;
     }
 }

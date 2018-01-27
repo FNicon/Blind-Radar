@@ -4,26 +4,17 @@ using UnityEngine;
 using DG.Tweening;
 
 public class EnemyBehaviour : MonoBehaviour {
-	public float movementDelay;
-	public float shootDelay;
-	public int runProbability;
-	private Rigidbody2D enemyBody;
-	public float moveSpeed;
-	private GameObject player;
 	public GameObject torpedo;
 	public Transform torpedoSpawnPoint;
-	public string playerTag;
-    public float shootThreshold = 1f;
-    public float lockOnDuration = 4f;
+    public float shootDelay = 3f;
+    private Transform player;
 
 	void Start () {
-		player = GameObject.FindGameObjectWithTag (playerTag);
-		enemyBody = gameObject.GetComponent<Rigidbody2D> ();
-		StartCoroutine (Movement());
-		StartCoroutine (Shoot ());
+        player = GameObject.FindGameObjectWithTag("Player").transform;
+        StartCoroutine(LockOn());
 	}
 
-	public void Detected() {
+	/*public void Detected() {
 		transform.DOKill ();
 		//DOTween.Clear ();
 		Debug.Log ("Is this deteccted?");
@@ -52,12 +43,12 @@ public class EnemyBehaviour : MonoBehaviour {
 		}
 		yield return new WaitForSeconds (shootDelay);
 		StartCoroutine (Shoot ());
-	}
+	}*/
 
     IEnumerator LockOn()
     {
         AlertManager.Instance.ShowAlert();
-        yield return new WaitForSeconds(lockOnDuration);
+        yield return new WaitForSeconds(shootDelay);
         FireTorpedo();
     }
 
