@@ -17,6 +17,7 @@ public class Radar : MonoBehaviour {
 
 	public void UsingRadar(){
 		ResetRadar ();
+		GetComponent<AudioSource> ().Play ();
 		DOTween.To(() => radarCollider.radius, x => radarCollider.radius = x, maxRadius, speed);
 	}
 
