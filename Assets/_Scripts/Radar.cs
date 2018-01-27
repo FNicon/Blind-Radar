@@ -3,6 +3,7 @@ using DG.Tweening;
 
 public class Radar : MonoBehaviour {
 	public CircleCollider2D radarCollider;
+	//public SpriteRenderer radarSprite;
 	public float speed;
 	public float maxRadius;
 	public string enemyTag;
@@ -19,11 +20,13 @@ public class Radar : MonoBehaviour {
 		ResetRadar ();
 		GetComponent<AudioSource> ().Play ();
 		DOTween.To(() => radarCollider.radius, x => radarCollider.radius = x, maxRadius, speed);
+		//radarSprite.transform.DOScale (new Vector3 (maxRadius, maxRadius), speed);
 	}
 
 	public void ResetRadar() {
 		if (radarCollider.radius >= maxRadius) {
 			radarCollider.radius = 0;
+			//radarSprite.transform.localScale = new Vector3 (0.1f, 0.1f);
 		}
 	}
 
