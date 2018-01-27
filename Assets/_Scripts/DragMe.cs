@@ -18,10 +18,12 @@ public class DragMe : MonoBehaviour {
 	private Image[] childImage;
 
 	public GameObject[] disableOnDrag;
+    private bool firstTime = true;
 
 	void Start () {
 		initSize = GetComponent<RectTransform>().sizeDelta;
-		image = GetComponent<Image>();
+        position = GetComponent<RectTransform>().position;
+        image = GetComponent<Image>();
 		childImage = GetComponentsInChildren<Image>();
 		imageSprite = image.sprite;
 		if(enableImageOnDrag) {
@@ -39,7 +41,7 @@ public class DragMe : MonoBehaviour {
 	}
 
 	public void BeginDrag() {
-		position = GetComponent<RectTransform>().position;
+		
 		if(enableImageOnDrag) {
 			foreach(Image img in childImage) {
 				img.color = new Color(255f, 255f, 255f, 255f);

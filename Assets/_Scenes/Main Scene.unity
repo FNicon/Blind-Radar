@@ -1465,6 +1465,7 @@ GameObject:
   - component: {fileID: 517104320}
   - component: {fileID: 517104323}
   - component: {fileID: 517104322}
+  - component: {fileID: 517104324}
   m_Layer: 5
   m_Name: Gunner
   m_TagString: Untagged
@@ -1605,6 +1606,18 @@ MonoBehaviour:
   resetScale: 1
   enableImageOnDrag: 0
   disableOnDrag: []
+--- !u!114 &517104324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 517104318}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61d6768695950547b7d08ae4f619d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kruType: 1
 --- !u!1 &530480172
 GameObject:
   m_ObjectHideFlags: 0
@@ -5723,7 +5736,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shader: {fileID: 4800000, guid: 22fe62a5d4de91a4995c1363cbc2492e, type: 3}
   Mode: 1
-  Timer: 155.27014
+  Timer: 176.91525
   Speed: 1
   Frequency: 12
   Amplitude: 0.01
@@ -8676,6 +8689,7 @@ GameObject:
   - component: {fileID: 1622348681}
   - component: {fileID: 1622348684}
   - component: {fileID: 1622348683}
+  - component: {fileID: 1622348685}
   m_Layer: 5
   m_Name: Driver
   m_TagString: Untagged
@@ -8816,6 +8830,18 @@ MonoBehaviour:
   resetScale: 1
   enableImageOnDrag: 0
   disableOnDrag: []
+--- !u!114 &1622348685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1622348679}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61d6768695950547b7d08ae4f619d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kruType: 0
 --- !u!1 &1627630108
 GameObject:
   m_ObjectHideFlags: 0
@@ -9082,7 +9108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d61d6768695950547b7d08ae4f619d1b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  kruType: 0
+  kruType: 1
 --- !u!114 &1644159071
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -9096,7 +9122,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   OnEnterMessage: EnterSlot
   OnExitMessage: ExitSlot
-  OnDropMessage: CheckSlot
+  OnDropMessage: DropSlot
 --- !u!1 &1653375615
 GameObject:
   m_ObjectHideFlags: 0
@@ -9316,6 +9342,8 @@ GameObject:
   - component: {fileID: 1792523358}
   - component: {fileID: 1792523360}
   - component: {fileID: 1792523359}
+  - component: {fileID: 1792523361}
+  - component: {fileID: 1792523362}
   m_Layer: 5
   m_Name: Engineer Slot
   m_TagString: Untagged
@@ -9374,6 +9402,32 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1792523357}
+--- !u!114 &1792523361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792523357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62334df1d11f8114c93c74c816bc847b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnterMessage: EnterSlot
+  OnExitMessage: ExitSlot
+  OnDropMessage: DropSlot
+--- !u!114 &1792523362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1792523357}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61d6768695950547b7d08ae4f619d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kruType: 2
 --- !u!1 &1805203476
 GameObject:
   m_ObjectHideFlags: 0
@@ -9386,6 +9440,7 @@ GameObject:
   - component: {fileID: 1805203478}
   - component: {fileID: 1805203481}
   - component: {fileID: 1805203480}
+  - component: {fileID: 1805203482}
   m_Layer: 5
   m_Name: Engineer
   m_TagString: Untagged
@@ -9526,6 +9581,18 @@ MonoBehaviour:
   resetScale: 1
   enableImageOnDrag: 0
   disableOnDrag: []
+--- !u!114 &1805203482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1805203476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61d6768695950547b7d08ae4f619d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kruType: 2
 --- !u!1 &1809478596
 GameObject:
   m_ObjectHideFlags: 0
@@ -9919,7 +9986,6 @@ MonoBehaviour:
   torpedo: {fileID: 1927390196246070, guid: 2132feb0fe5b2964ab40ce3e2fb283db, type: 2}
   torpedoSpawnPoint: {fileID: 695549599}
   submarineInterior: {fileID: 1939420282}
-  notificationHurt: {fileID: 0}
 --- !u!61 &1906974056
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10566,6 +10632,8 @@ GameObject:
   - component: {fileID: 2096615810}
   - component: {fileID: 2096615812}
   - component: {fileID: 2096615811}
+  - component: {fileID: 2096615813}
+  - component: {fileID: 2096615814}
   m_Layer: 5
   m_Name: Driver Slot
   m_TagString: Untagged
@@ -10624,6 +10692,32 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2096615809}
+--- !u!114 &2096615813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2096615809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62334df1d11f8114c93c74c816bc847b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnEnterMessage: EnterSlot
+  OnExitMessage: ExitSlot
+  OnDropMessage: DropSlot
+--- !u!114 &2096615814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2096615809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d61d6768695950547b7d08ae4f619d1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  kruType: 0
 --- !u!1 &2119138304
 GameObject:
   m_ObjectHideFlags: 0

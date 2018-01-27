@@ -39,38 +39,84 @@ public class KruManager : Singleton<KruManager> {
         if(i == 1)
         {
             driverHealth -= 50;
-            driverHealthFill.fillAmount = driverHealth / 100;
+            
         } else if(i == 2)
         {
             gunnerHealth -= 50;
-            gunnerHealthFill.fillAmount = gunnerHealth / 100;
+            
         } else if(i == 3)
         {
             engineerHealth -= 50;
-            engineerHealthFill.fillAmount = engineerHealth / 100;
+            
         }
 
         CheckAnyDead();
+        UpdateHealth();
+    }
+
+    void UpdateHealth()
+    {
+        driverHealthFill.fillAmount = driverHealth / 100;
+        gunnerHealthFill.fillAmount = gunnerHealth / 100;
+        engineerHealthFill.fillAmount = engineerHealth / 100;
     }
 
     void CheckAnyDead()
     {
-        if(driverHealth <= 0)
+        if (driverHealth <= 0)
         {
             driverSlot.SetActive(true);
             driver.SetActive(false);
+        } else
+        {
+            driverSlot.SetActive(false);
+            driver.SetActive(true);
         }
 
         if(gunnerHealth <= 0)
         {
             gunnerSlot.SetActive(true);
             gunner.SetActive(false);
+        } else
+        {
+            gunnerSlot.SetActive(false);
+            gunner.SetActive(true);
         }
 
         if(engineerHealth <= 0)
         {
             engineerSlot.SetActive(true);
             engineer.SetActive(false);
+        } else
+        {
+            engineerSlot.SetActive(false);
+            engineer.SetActive(true);
         }
+    }
+
+    public void Swap(KruType kru1, KruType kru2)
+    {
+        driver.GetComponent<DragMe>().EndDrag();
+        gunner.GetComponent<DragMe>().EndDrag();
+        engineer.GetComponent<DragMe>().EndDrag();
+        if (kru1 == KruType.Driver && kru2 == KruType.Gunner || kru1 == KruType.Gunner && kru2 == KruType.Driver)
+        {
+            float tmp = driverHealth;
+            driverHealth = gunnerHealth;
+            gunnerHealth = tmp;
+        } else if (kru1 == KruType.Driver && kru2 == KruType.Engineer || kru1 == KruType.Engineer && kru2 == KruType.Driver)
+        {
+            float tmp = driverHealth;
+            driverHealth = engineerHealth;
+            engineerHealth = tmp;
+        } else if (kru1 == KruType.Gunner && kru2 == KruType.Engineer || kru1 == KruType.Engineer && kru2 == KruType.Gunner)
+        {
+            float tmp = engineerHealth;
+            engineerHealth = gunnerHealth;
+            gunnerHealth = tmp;
+        }
+
+        CheckAnyDead();
+        UpdateHealth();
     }
 }

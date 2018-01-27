@@ -16,9 +16,9 @@ public class KruSlot : MonoBehaviour {
 		
 	}
 
-    public void CheckSlot(PointerEventData data)
+    public void DropSlot(PointerEventData data)
     {
-        data.pointerDrag.transform.SetParent(this.transform);
+        KruManager.Instance.Swap(data.pointerDrag.GetComponent<KruSlot>().kruType, kruType);   
     }
 
     public void EnterSlot(PointerEventData data)
