@@ -51,4 +51,12 @@ public class SubmarineControl : MonoBehaviour {
     {
         Instantiate(torpedo, torpedoSpawnPoint);
     }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Boundary"))
+        {
+            rb.velocity = Vector2.zero;
+        }
+    }
 }
