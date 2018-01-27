@@ -2,24 +2,28 @@
 using UnityEngine;
 
 public class RadarListener : MonoBehaviour {
-	public SpriteRenderer renderer;
+	public SpriteRenderer radarRenderer;
+	public SpriteRenderer enemyRenderer;
 	public float showTime;
 
 	void Start () {
-        if (!renderer)
+        if (!radarRenderer || !enemyRenderer)
             Debug.LogError("Tidak ada renderer");
-        renderer.enabled = false;	
+        radarRenderer.enabled = false;
+		enemyRenderer.enabled = false;
 	}
 	
 	void Update () {
 		
 	}
 	public void ShowEnemy() {
-        renderer.enabled = true;
+        radarRenderer.enabled = true;
+		enemyRenderer.enabled = true;
 		StartCoroutine (Delay());
 	}
 	public void HideEnemy() {
-        renderer.enabled = false;
+        radarRenderer.enabled = false;
+		enemyRenderer.enabled = false;
 	}
 	IEnumerator Delay() {
 		yield return new WaitForSeconds (showTime);
