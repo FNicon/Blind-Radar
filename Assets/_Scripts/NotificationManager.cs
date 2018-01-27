@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class NotificationManager : MonoBehaviour {
 	public Text notificationText;
+	public Image notificationChar;
 
 	//private Animator notificationAnimator;
 	private Queue<string> sentences;
@@ -20,6 +21,7 @@ public class NotificationManager : MonoBehaviour {
 		//notificationAnimator.SetBool("isStartNotification", true);
 		durationPerNotification = inputnotification.notificationDuration;
 		sentences.Clear();
+		notificationChar.sprite = inputnotification.charImage [notifIndex];
 		string sentence = inputnotification.notif[notifIndex];
 		sentences.Enqueue(sentence);
 		/*foreach (string sentence in inputnotification.notif[NotifIndex]) {
