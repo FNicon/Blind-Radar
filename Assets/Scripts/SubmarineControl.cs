@@ -6,6 +6,7 @@ using DG.Tweening;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class SubmarineControl : MonoBehaviour {
+    public Vector2 initVelocity;
     public Slider horizontalAccelerationSlider;
     public Slider verticalAccelerationSlider;
     public Image healthFill;
@@ -26,6 +27,7 @@ public class SubmarineControl : MonoBehaviour {
 
 	void Update () {
         Vector2 desiredVelocity = new Vector2(horizontalAcceleration / 100f, verticalAcceleration / 100f);
+        desiredVelocity += initVelocity;
         rb.velocity = desiredVelocity;
     }
 

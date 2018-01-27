@@ -2566,6 +2566,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7f1c67876ad1cc4086e762a0cfc8277, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  initVelocity: {x: 0.3, y: 0}
   horizontalAccelerationSlider: {fileID: 1119571409}
   verticalAccelerationSlider: {fileID: 367659337}
   healthFill: {fileID: 22160533}
