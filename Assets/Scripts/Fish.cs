@@ -25,14 +25,12 @@ public class Fish : MonoBehaviour {
 	public float margin = 0.6f;
 	protected Vector3 dest, topLeftScreen, bottomLeftScreen;
 
-	// Use this for initialization
-	void Start () {
+    void Start () {
 		RandomDestination ();
 		ApplyRotation ();
 		StartMoving (speed.moveSpeed);
 	}
 	
-	// Update is called once per frame
 	void Update () {
 		
 	}
