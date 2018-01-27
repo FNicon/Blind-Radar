@@ -15,6 +15,7 @@ public class SubmarineControl : MonoBehaviour {
     public float maxHealth = 100f;
     public GameObject torpedo;
     public Transform torpedoSpawnPoint;
+    public GameObject submarineInterior;
 
     private Rigidbody2D rb;
     private float horizontalAcceleration;
@@ -59,5 +60,10 @@ public class SubmarineControl : MonoBehaviour {
         GameObject g = Instantiate(torpedo, torpedoSpawnPoint.position, torpedoSpawnPoint.rotation) as GameObject;
         CameraController.Instance.SetLastTorpedo(g.transform);
     }
-    
+
+    void OnMouseDown()
+    {
+        submarineInterior.SetActive(true);
+    }
+
 }
