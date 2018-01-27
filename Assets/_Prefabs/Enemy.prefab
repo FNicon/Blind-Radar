@@ -163,7 +163,7 @@ MonoBehaviour:
   shootDelay: 10
   runProbability: 7
   moveSpeed: 3
-  torpedo: {fileID: 1927390196246070, guid: 2132feb0fe5b2964ab40ce3e2fb283db, type: 2}
+  torpedo: {fileID: 1927390196246070, guid: f10bd04528ae1f848b565f42fed27f16, type: 2}
   torpedoSpawnPoint: {fileID: 4063433937156600}
   playerTag: Player
   shootThreshold: 1

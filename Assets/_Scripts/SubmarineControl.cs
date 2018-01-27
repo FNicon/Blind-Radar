@@ -59,4 +59,16 @@ public class SubmarineControl : MonoBehaviour {
             rb.velocity = Vector2.zero;
         }
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("EnemyTorpedo"))
+        {
+            /*Transform torpedoFX = collision.transform.GetChild(0);
+            torpedoFX.SetParent(null);
+            torpedoFX.localScale = new Vector3(1f, 1f, 1f);*/
+            Destroy(collision.gameObject);
+            ChangeHealth(-20f);
+        }
+    }
 }
