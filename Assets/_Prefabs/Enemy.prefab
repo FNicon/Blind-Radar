@@ -160,13 +160,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 5
-  shootDelay: 5
+  shootDelay: 10
   runProbability: 7
   moveSpeed: 3
   torpedo: {fileID: 1927390196246070, guid: 2132feb0fe5b2964ab40ce3e2fb283db, type: 2}
   torpedoSpawnPoint: {fileID: 4063433937156600}
   playerTag: Player
   shootThreshold: 1
+  lockOnDuration: 4
 --- !u!114 &114497329524264500
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -255,9 +256,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 836687035
+  m_SortingLayer: 3
+  m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: db4f306737dbe8a44902ce822ccbc11d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -14,6 +14,7 @@ public class EnemyBehaviour : MonoBehaviour {
 	public Transform torpedoSpawnPoint;
 	public string playerTag;
     public float shootThreshold = 1f;
+    public float lockOnDuration = 4f;
 
 	void Start () {
 		player = GameObject.FindGameObjectWithTag (playerTag);
@@ -47,11 +48,18 @@ public class EnemyBehaviour : MonoBehaviour {
 
 	IEnumerator Shoot() {
 		if (gameObject.transform.position.y > player.transform.position.y - 1 && gameObject.transform.position.y < player.transform.position.y + 1) {
-			FireTorpedo ();
+            StartCoroutine(LockOn());
 		}
 		yield return new WaitForSeconds (shootDelay);
 		StartCoroutine (Shoot ());
 	}
+
+    IEnumerator LockOn()
+    {
+        AlertManager.Instance.ShowAlert();
+        yield return new WaitForSeconds(lockOnDuration);
+        FireTorpedo();
+    }
 
 	public void FireTorpedo() {
 		if (gameObject.transform.position.x > player.transform.position.x) {
