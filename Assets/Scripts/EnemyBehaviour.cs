@@ -21,10 +21,6 @@ public class EnemyBehaviour : MonoBehaviour {
 		StartCoroutine (Shoot ());
 	}
 
-	void Update() {
-		
-	}
-
 	public void Detected() {
 		DOTween.Clear ();
 		Debug.Log ("Is this deteccted?");
@@ -55,8 +51,10 @@ public class EnemyBehaviour : MonoBehaviour {
 	}
 
 	public void FireTorpedo() {
-		Vector3 thisEulerAngles;
-		thisEulerAngles = transform.eulerAngles;
-		Instantiate (torpedo, torpedoSpawnPoint.position,Quaternion.Euler(new Vector3(thisEulerAngles.x,thisEulerAngles.y,thisEulerAngles.z*-1)));
+		if (gameObject.transform.position.x > player.transform.position.x) {
+			Instantiate (torpedo, torpedoSpawnPoint.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
+		} else {
+			Instantiate (torpedo, torpedoSpawnPoint.position, Quaternion.Euler (new Vector3 (0, 180,0)));
+		}
 	}
 }
