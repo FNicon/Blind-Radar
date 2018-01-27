@@ -14,37 +14,6 @@ public class EnemyBehaviour : MonoBehaviour {
         StartCoroutine(LockOn());
 	}
 
-	/*public void Detected() {
-		transform.DOKill ();
-		//DOTween.Clear ();
-		Debug.Log ("Is this deteccted?");
-		int probability = Random.Range (0, 10);
-		if (probability <= runProbability) {
-			Debug.Log ("Probability chance!");
-			float newY = Random.Range (-3f, 3f);
-			transform.DOLocalMoveY (newY, moveSpeed);
-		}
-	}
-
-	IEnumerator Movement() {
-		transform.DOKill ();
-		//DOTween.Clear ();
-		float oldY = gameObject.transform.position.y;
-		float newY = player.transform.position.y;
-		float deltaY = Mathf.Abs (oldY - newY);
-		transform.DOMoveY (newY, deltaY * moveSpeed);
-		yield return new WaitForSeconds (movementDelay);
-		StartCoroutine (Movement ());
-	}
-
-	IEnumerator Shoot() {
-		if (gameObject.transform.position.y > player.transform.position.y - 1 && gameObject.transform.position.y < player.transform.position.y + 1) {
-            StartCoroutine(LockOn());
-		}
-		yield return new WaitForSeconds (shootDelay);
-		StartCoroutine (Shoot ());
-	}*/
-
     IEnumerator LockOn()
     {
         AlertManager.Instance.ShowAlert();
@@ -59,4 +28,10 @@ public class EnemyBehaviour : MonoBehaviour {
 			Instantiate (torpedo, torpedoSpawnPoint.position, Quaternion.Euler (new Vector3 (0, 180,0)));
 		}
 	}
+
+    public void Dead()
+    {
+        GetComponentInParent<Troops>().TroopsDead();
+        Destroy(this.gameObject);
+    }
 }

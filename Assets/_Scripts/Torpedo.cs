@@ -45,8 +45,8 @@ public class Torpedo : MonoBehaviour {
         {
             Instantiate(hitfx, transform.position, transform.rotation);
             ProCamera2DShake.Instance.Shake(0);
+            collision.GetComponent<EnemyBehaviour>().Dead();
             Destroy(this.gameObject);
-            Destroy(collision.gameObject);
         }
     }
 }
