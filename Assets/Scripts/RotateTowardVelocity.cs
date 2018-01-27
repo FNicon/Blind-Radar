@@ -13,11 +13,7 @@ public class RotateTowardVelocity : MonoBehaviour {
 
 	void Update () {
         Vector2 v = rb.velocity;
-        if(rb.velocity.x > 0.3f)
-        {
-            angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
-            transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
-        }
-        
+        angle = Mathf.Atan2(v.y, v.x) * Mathf.Rad2Deg;
+        transform.rotation = Quaternion.AngleAxis(angle, Vector3.forward);
     }
 }
