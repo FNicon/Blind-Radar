@@ -70,7 +70,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed:
     moveSpeed: 1
-    runSpeed: 5
+    runSpeed: 3
     turnSpeed: 1
   randomDistanceForRun:
     minX: 5
