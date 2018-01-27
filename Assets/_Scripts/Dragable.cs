@@ -10,6 +10,10 @@ public class Dragable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDrag
 
 	private GameObject placeHolder = null;
 
+	private void Start() {
+		parentTemp = this.transform.parent;
+	}
+
 	public void OnBeginDrag(PointerEventData pointerData) {
 		placeHolder = new GameObject ();
 		placeHolder.transform.SetParent (this.transform.parent);

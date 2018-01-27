@@ -5194,7 +5194,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shader: {fileID: 4800000, guid: 22fe62a5d4de91a4995c1363cbc2492e, type: 3}
   Mode: 1
-  Timer: 585.53265
+  Timer: 594.84814
   Speed: 1
   Frequency: 12
   Amplitude: 0.01
@@ -5845,6 +5845,7 @@ GameObject:
   - component: {fileID: 990743178}
   - component: {fileID: 990743180}
   - component: {fileID: 990743181}
+  - component: {fileID: 990743182}
   m_Layer: 5
   m_Name: Driver
   m_TagString: Untagged
@@ -5927,6 +5928,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &990743182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 990743176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &1019227504
 GameObject:
   m_ObjectHideFlags: 0
@@ -6632,6 +6652,7 @@ GameObject:
   - component: {fileID: 1405588103}
   - component: {fileID: 1405588105}
   - component: {fileID: 1405588106}
+  - component: {fileID: 1405588107}
   m_Layer: 5
   m_Name: Gunner
   m_TagString: Untagged
@@ -6701,8 +6722,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6080831f2818f66428cb7373df679c0b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentReturn: {fileID: 1160715205}
-  parentTemp: {fileID: 1160715205}
+  parentReturn: {fileID: 0}
+  parentTemp: {fileID: 0}
 --- !u!225 &1405588106
 CanvasGroup:
   m_ObjectHideFlags: 0
@@ -6714,6 +6735,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1405588107
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1405588101}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &1493007412
 GameObject:
   m_ObjectHideFlags: 0
@@ -7386,6 +7426,7 @@ GameObject:
   - component: {fileID: 1687848325}
   - component: {fileID: 1687848327}
   - component: {fileID: 1687848328}
+  - component: {fileID: 1687848329}
   m_Layer: 5
   m_Name: Engineer
   m_TagString: Untagged
@@ -7468,6 +7509,25 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1687848329
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1687848323}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1679637790, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_IgnoreLayout: 0
+  m_MinWidth: -1
+  m_MinHeight: -1
+  m_PreferredWidth: -1
+  m_PreferredHeight: -1
+  m_FlexibleWidth: -1
+  m_FlexibleHeight: -1
+  m_LayoutPriority: 1
 --- !u!1 &1713240622
 GameObject:
   m_ObjectHideFlags: 0
