@@ -22,6 +22,8 @@ public class SubmarineControl : MonoBehaviour {
     private float currentHealth;
     private Transform lastTorpedo;
 
+	public NotificationTrigger notificationHurt;
+
 	void Start () {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
@@ -50,6 +52,7 @@ public class SubmarineControl : MonoBehaviour {
 
     public void ChangeHealth(float val)
     {
+		notificationHurt.TriggerNotification (1);
         currentHealth += val;
         healthFill.fillAmount = currentHealth / 100f;
     }
