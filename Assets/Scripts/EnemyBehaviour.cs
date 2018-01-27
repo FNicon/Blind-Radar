@@ -22,7 +22,8 @@ public class EnemyBehaviour : MonoBehaviour {
 	}
 
 	public void Detected() {
-		DOTween.Clear ();
+		transform.DOKill ();
+		//DOTween.Clear ();
 		Debug.Log ("Is this deteccted?");
 		int probability = Random.Range (0, 10);
 		if (probability <= runProbability) {
@@ -33,7 +34,8 @@ public class EnemyBehaviour : MonoBehaviour {
 	}
 
 	IEnumerator Movement() {
-		DOTween.Clear ();
+		transform.DOKill ();
+		//DOTween.Clear ();
 		float oldY = gameObject.transform.position.y;
 		float newY = player.transform.position.y;
 		float deltaY = Mathf.Abs (oldY - newY);
