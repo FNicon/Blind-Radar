@@ -35,9 +35,7 @@ public class Radar : MonoBehaviour {
             else
                 Debug.Log("Enemy gak ada radar listenernya");
 			EnemyBehaviour enemyBehave = other.GetComponent<EnemyBehaviour> ();
-			Debug.Log ("sebelulmnya");
 			if (enemyBehave) {
-				Debug.Log ("ada");
 				enemyBehave.Detected ();
 			}
         }
