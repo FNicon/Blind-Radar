@@ -28,7 +28,7 @@ public class Fish : MonoBehaviour {
     void Start () {
 		RandomDestination ();
 		ApplyRotation ();
-		StartMoving (speed.moveSpeed);
+		StartMovingInOutCubic (speed.moveSpeed);
 	}
 	
 	void Update () {
@@ -45,12 +45,16 @@ public class Fish : MonoBehaviour {
 		dest = new Vector3 (Random.Range (topLeftScreen.x, bottomLeftScreen.x), Random.Range (topLeftScreen.y, bottomLeftScreen.y), 0);
 	}
 
-	protected void StartMoving(float speed) {
-		transform.DOMove (dest, speed).SetEase (Ease.InOutCubic).SetSpeedBased (true).OnComplete (ReachDestination);
+	protected void StartMovingInOutCubic(float speed) {
+		transform.DOMove (dest, speed).SetEase (Ease.InOutCubic).SetSpeedBased (true).OnComplete (() => ReachDestinationInOutCubic(this.speed.moveSpeed));
 	}
 
-	protected void StartMoving(float speed, Vector3 destAfterReachDestination) {
-		transform.DOMove (dest, speed).SetEase (Ease.InOutCubic).SetSpeedBased (true).OnComplete (() => ReachDestination(destAfterReachDestination));
+	protected void StartMovingInSine(float speed, Vector3 destAfterReachDestination, float nextSpeed) {
+		transform.DOMove (dest, speed).SetEase (Ease.InSine).SetSpeedBased (true).OnComplete (() => ReachDestinationOutSine(nextSpeed, destAfterReachDestination));
+	}
+
+	protected void StartMovingOutSine(float speed) {
+		transform.DOMove (dest, speed).SetEase (Ease.OutSine).SetSpeedBased (true).OnComplete (() => ReachDestinationInOutCubic(this.speed.moveSpeed));
 	}
 
 	protected void StopMoving() {
@@ -65,16 +69,22 @@ public class Fish : MonoBehaviour {
 		}
 	}
 
-	protected void ReachDestination() {
+	protected void ReachDestinationInOutCubic(float nextSpeed) {
 		RandomDestination ();
 		ApplyRotation ();
-		StartMoving (speed.moveSpeed);
+		StartMovingInOutCubic (nextSpeed);
 	}
 
-	protected void ReachDestination(Vector3 destNext) {
+	protected void ReachDestinationInSine(float nextSpeed, Vector3 destNext) {
 		dest = destNext;
 		ApplyRotation ();
-		StartMoving (speed.moveSpeed);
+		StartMovingInSine (nextSpeed, destNext, this.speed.runSpeed);
+	}
+
+	protected void ReachDestinationOutSine(float nextSpeed, Vector3 destNext) {
+		dest = destNext;
+		ApplyRotation ();
+		StartMovingOutSine (nextSpeed);
 	}
 
 	protected Vector3 GetRunDestination(Vector3 other) {
@@ -110,7 +120,7 @@ public class Fish : MonoBehaviour {
 	protected void RunFromObject(Vector3 other) {
 		dest = GetRunDestination (other);
 		ApplyRotation ();
-		StartMoving (speed.runSpeed);
+		StartMovingOutSine (speed.runSpeed);
 	}
 
 	protected void OnTriggerEnter2D (Collider2D other) {
