@@ -714,11 +714,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementDelay: 5
+  shootDelay: 3
   runProbability: 7
   moveSpeed: 3
   torpedo: {fileID: 1927390196246070, guid: 2132feb0fe5b2964ab40ce3e2fb283db, type: 2}
   torpedoSpawnPoint: {fileID: 1281695575}
   playerTag: Player
+  isShooting: 0
 --- !u!50 &410707139
 Rigidbody2D:
   serializedVersion: 4

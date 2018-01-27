@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class EnemyBehaviour : MonoBehaviour {
 	public float movementDelay;
+	public float shootDelay;
 	public int runProbability;
 	private Rigidbody2D enemyBody;
 	public float moveSpeed;
@@ -17,12 +18,11 @@ public class EnemyBehaviour : MonoBehaviour {
 		player = GameObject.FindGameObjectWithTag (playerTag);
 		enemyBody = gameObject.GetComponent<Rigidbody2D> ();
 		StartCoroutine (Movement());
+		StartCoroutine (Shoot ());
 	}
 
 	void Update() {
-		if (gameObject.transform.position.y == player.transform.position.y) {
-			FireTorpedo ();
-		}
+		
 	}
 
 	public void Detected() {
@@ -46,9 +46,17 @@ public class EnemyBehaviour : MonoBehaviour {
 		StartCoroutine (Movement ());
 	}
 
+	IEnumerator Shoot() {
+		if (gameObject.transform.position.y == player.transform.position.y) {
+			FireTorpedo ();
+		}
+		yield return new WaitForSeconds (shootDelay);
+		StartCoroutine (Shoot ());
+	}
+
 	public void FireTorpedo() {
-		//torpedoRotation.SetFromToRotation (gameObject.transform.position, player.transform.position);
-		Instantiate (torpedo, torpedoSpawnPoint);
-		//Instantiate (torpedo, torpedoSpawnPoint,Quaternion.SetFromToRotation (gameObject.transform.position, player.transform.position));
+		Vector3 thisEulerAngles;
+		thisEulerAngles = transform.eulerAngles;
+		Instantiate (torpedo, torpedoSpawnPoint.position,Quaternion.Euler(new Vector3(thisEulerAngles.x,thisEulerAngles.y,thisEulerAngles.z*-1)));
 	}
 }
