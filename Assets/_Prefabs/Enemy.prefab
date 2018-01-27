@@ -179,7 +179,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f3aca9976ce52441bf60d2ef21fa4d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 212824916488409760}
+  radarRenderer: {fileID: 212824916488409760}
+  enemyRenderer: {fileID: 212841929400853788}
   showTime: 5
 --- !u!212 &212824916488409760
 SpriteRenderer:
@@ -256,8 +257,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 836687035
-  m_SortingLayer: 3
+  m_SortingLayerID: 902448047
+  m_SortingLayer: 2
   m_SortingOrder: 10
   m_Sprite: {fileID: 21300000, guid: db4f306737dbe8a44902ce822ccbc11d, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}

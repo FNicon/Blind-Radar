@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Com.LuisPedroFonseca.ProCamera2D;
 
 public class Torpedo : MonoBehaviour {
 
@@ -32,6 +33,7 @@ public class Torpedo : MonoBehaviour {
         {
             collision.GetComponent<SubmarineControl>().ChangeHealth(-damage);
             Instantiate(hitfx, transform.position, transform.rotation);
+            ProCamera2DShake.Instance.Shake(0);
             Destroy(this.gameObject);
         } else if (collision.gameObject.CompareTag("Enemy"))
         {

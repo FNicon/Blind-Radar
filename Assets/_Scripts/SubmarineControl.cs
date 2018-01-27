@@ -29,6 +29,11 @@ public class SubmarineControl : MonoBehaviour {
         Vector2 desiredVelocity = new Vector2(horizontalAcceleration / 100f, verticalAcceleration / 100f);
         desiredVelocity += initVelocity;
         rb.velocity = desiredVelocity;
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            FireTorpedo();
+        }
     }
 
     public void ChangeHorizontalAcceleration()
@@ -50,13 +55,5 @@ public class SubmarineControl : MonoBehaviour {
     public void FireTorpedo()
     {
         Instantiate(torpedo, torpedoSpawnPoint.position, torpedoSpawnPoint.rotation);
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Boundary"))
-        {
-            rb.velocity = Vector2.zero;
-        }
     }
 }
