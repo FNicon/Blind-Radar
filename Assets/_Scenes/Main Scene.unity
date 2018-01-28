@@ -5872,7 +5872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shader: {fileID: 4800000, guid: 22fe62a5d4de91a4995c1363cbc2492e, type: 3}
   Mode: 1
-  Timer: 455.42255
+  Timer: 505.81628
   Speed: 1
   Frequency: 12
   Amplitude: 0.01
