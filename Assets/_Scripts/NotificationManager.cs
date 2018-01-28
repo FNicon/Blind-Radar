@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class NotificationManager : MonoBehaviour {
 	public GameObject notificationBox;
@@ -11,6 +12,8 @@ public class NotificationManager : MonoBehaviour {
 	//private Animator notificationAnimator;
 	private Queue<string> sentences;
 	private float durationPerNotification;
+
+	private const float notificationShowHideDiff = 548;
 
 	// Use this for initialization
 	void Start () {
@@ -55,10 +58,20 @@ public class NotificationManager : MonoBehaviour {
 	}*/
 
 	IEnumerator duration () {
-		notificationBox.SetActive (true);
+		yield return ShowNotification ();
 		yield return new WaitForSeconds (durationPerNotification);
-		notificationBox.SetActive (false);
+		yield return HideNotification ();
 		DisplayNextnotification ();
+	}
+
+	IEnumerator ShowNotification () {
+		notificationBox.transform.DOLocalMoveX (680, 1).SetEase (Ease.InBack);
+		yield return new WaitForSeconds (1);
+	}
+
+	IEnumerator HideNotification () {
+		notificationBox.transform.DOLocalMoveX (1500, 1).SetEase (Ease.OutBack);
+		yield return new WaitForSeconds (1);
 	}
 
 	void Endnotification() {
