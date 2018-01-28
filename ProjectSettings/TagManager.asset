@@ -11,6 +11,7 @@ TagManager:
   - Torpedo
   - EnemyTorpedo
   - EnemySpawner
+  - Egon
   layers:
   - Default
   - TransparentFX

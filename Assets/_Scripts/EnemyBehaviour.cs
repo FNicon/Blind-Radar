@@ -40,7 +40,11 @@ public class EnemyBehaviour : MonoBehaviour {
 
     public void Dead()
     {
-        GetComponentInParent<Troops>().TroopsDead();
-        Destroy(this.gameObject);
+        Troops troop = GetComponentInParent<Troops>();
+        if(troop)
+            troop.TroopsDead();
+
+        if(!transform.CompareTag("Egon"))
+            Destroy(this.gameObject);
     }
 }

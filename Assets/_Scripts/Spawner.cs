@@ -21,7 +21,7 @@ public class Spawner : MonoBehaviour
     }
     public void Spawn()
     {
-        if (i >= spawnThings.Length)
+        if (i >= spawnThings.Length && sequenceSpawn)
         {
             CancelInvoke();
             BossManager.Instance.SpawnBoss();
