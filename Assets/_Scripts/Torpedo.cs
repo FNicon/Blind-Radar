@@ -50,6 +50,7 @@ public class Torpedo : MonoBehaviour {
             collision.GetComponent<EnemyBehaviour>().Dead();
             CameraController.Instance.Unfollow();
             Destroy(this.gameObject);
+			NotificationTrigger.Instance.TriggerNotification (0);
         }
     }
 }

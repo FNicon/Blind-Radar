@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 public class NotificationManager : MonoBehaviour {
+	public GameObject notificationBox;
 	public Text notificationText;
 	public Image notificationChar;
 
@@ -21,8 +22,8 @@ public class NotificationManager : MonoBehaviour {
 		//notificationAnimator.SetBool("isStartNotification", true);
 		durationPerNotification = inputnotification.notificationDuration;
 		sentences.Clear();
-		notificationChar.sprite = inputnotification.charImage [notifIndex];
-		string sentence = inputnotification.notif[notifIndex];
+		notificationChar.sprite = inputnotification.notifications [notifIndex].charImage;
+		string sentence = inputnotification.notifications [notifIndex].notif;
 		sentences.Enqueue(sentence);
 		/*foreach (string sentence in inputnotification.notif[NotifIndex]) {
 			sentences.Enqueue(sentence);
@@ -54,7 +55,9 @@ public class NotificationManager : MonoBehaviour {
 	}*/
 
 	IEnumerator duration () {
+		notificationBox.SetActive (true);
 		yield return new WaitForSeconds (durationPerNotification);
+		notificationBox.SetActive (false);
 		DisplayNextnotification ();
 	}
 
