@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class DialogueUIManager : Singleton<DialogueUIManager> {
 	//Dialgoues
-	//public Text actorNameText;
+	public Text actorNameText;
 	public Text dialogueText;
 	public Image actorImage;
 	public GameObject dialoguePanel;
@@ -19,9 +19,9 @@ public class DialogueUIManager : Singleton<DialogueUIManager> {
 	}
 
 	public void ActivateDialoguePanel(Dialogue inputDialogue) {
-		//actorNameText.text = inputDialogue.actorName;
+		actorNameText.text = inputDialogue.actorName;
 		actorImage.sprite = inputDialogue.actorSprite;
-		actorImage.SetNativeSize();
+		//actorImage.SetNativeSize();
 		dialoguePanel.SetActive(true);
 	}
 
