@@ -4,9 +4,14 @@ using UnityEngine;
 
 [System.Serializable]
 public class Notification {
-	[TextArea(3,10)]
-	public string[] notif;
-	public Sprite[] charImage;
+
+	[System.Serializable]
+	public class SingleNotification {
+		[TextArea(3,10)] public string notif;
+		public Sprite charImage;
+	}
+
+	public SingleNotification[] notifications;
 	public float notificationDuration;
 
 	// Use this for initialization

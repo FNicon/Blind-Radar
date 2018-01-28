@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NotificationTrigger : MonoBehaviour {
+public class NotificationTrigger : Singleton<NotificationTrigger> {
 	public Notification notification;
-	public NotificationManager notificationScript;
+	public NotificationManager notificationManager;
 
 	/*void OnTriggerEnter2D(Collider2D other) {
 		if (other.gameObject.CompareTag ("Player")) {
@@ -13,6 +13,6 @@ public class NotificationTrigger : MonoBehaviour {
 	}*/
 
 	public void TriggerNotification (int notificationIndex) {
-		notificationScript.Startnotification(notification, notificationIndex);
+		notificationManager.Startnotification(notification, notificationIndex);
 	}
 }
