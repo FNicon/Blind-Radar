@@ -9,11 +9,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: dac9c5d9e51a1934ca561605ebdce8b2, type: 3}
-  m_Name: Opening
+  m_Name: Opening_1
   m_EditorClassIdentifier: 
+  actorName: Finiko
   dialogues:
-  - AAAAAAAAAAAA
-  - AAAAAA
-  - AAAAAAAAAAAAAAAAAAAAAAAAAAAa
-  actorSprite: {fileID: 21300000, guid: 756ad816274a7984bb7b5d5db38df21c, type: 3}
-  nextDialogue: {fileID: 0}
+  - Dah nyampe?
+  actorSprite: {fileID: 21300000, guid: 4505dbe42b8d26941b4f83cb0f1b453c, type: 3}
+  nextDialogue: {fileID: 11400000, guid: 80f565a85a355e245861c45018482d03, type: 2}

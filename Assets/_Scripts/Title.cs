@@ -11,6 +11,8 @@ public class Title : MonoBehaviour {
 	public DOTweenAnimation titleText;
 	public bool isFinished = false;
 	public DOTweenAnimation fader;
+
+	public SceneLoader scenes;
 	// Use this for initialization
 	void Start () {
 		
@@ -22,10 +24,8 @@ public class Title : MonoBehaviour {
 			videoTitle.Pause();
 			StartShow();
 			isFinished = true;
-			//Debug.Log("OY");
-			//titleText.GetComponent<DOTween>()
 		} else if (videoTitle.frame == frameEnd) {
-
+			scenes.nextScene();
 		}
 	}
 	void StartShow() {

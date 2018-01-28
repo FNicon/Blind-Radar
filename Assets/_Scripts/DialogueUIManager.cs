@@ -10,6 +10,7 @@ public class DialogueUIManager : Singleton<DialogueUIManager> {
 	public Image actorImage;
 	public GameObject dialoguePanel;
 	public GameObject dialogueEndSign;
+	public GameObject parentPanel;
 
 	void Awake() {
 		if (DialogueUIManager.Instance != this) {
@@ -19,6 +20,7 @@ public class DialogueUIManager : Singleton<DialogueUIManager> {
 	}
 
 	public void ActivateDialoguePanel(Dialogue inputDialogue) {
+		parentPanel.SetActive(true);
 		actorNameText.text = inputDialogue.actorName;
 		actorImage.sprite = inputDialogue.actorSprite;
 		//actorImage.SetNativeSize();
@@ -27,7 +29,11 @@ public class DialogueUIManager : Singleton<DialogueUIManager> {
 
 	public void DeactivateDialoguePanel() {
 		dialogueText.text = "";
+		dialogueEndSign.SetActive(false);
+		actorNameText.text = "";
+		actorImage.gameObject.SetActive(false);
 		dialoguePanel.SetActive(false);
+		parentPanel.SetActive(false);
 	}
 
 	public void StartTypingDialogue(string sentence) {
