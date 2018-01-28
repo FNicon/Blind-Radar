@@ -43,14 +43,24 @@ public class Torpedo : MonoBehaviour {
             ProCamera2DShake.Instance.Shake(0);
             CameraController.Instance.Unfollow();
             Destroy(this.gameObject);
-        } else if (collision.gameObject.CompareTag("Enemy"))
+        }
+        else if (collision.gameObject.CompareTag("Enemy"))
         {
             Instantiate(hitfx, transform.position, transform.rotation);
             ProCamera2DShake.Instance.Shake(0);
             collision.GetComponent<EnemyBehaviour>().Dead();
             CameraController.Instance.Unfollow();
             Destroy(this.gameObject);
-			NotificationTrigger.Instance.TriggerNotification (0);
+            NotificationTrigger.Instance.TriggerNotification(0);
+        }
+        else if (collision.gameObject.CompareTag("Egon"))
+        {
+            Instantiate(hitfx, transform.position, transform.rotation);
+            ProCamera2DShake.Instance.Shake(0);
+            CameraController.Instance.Unfollow();
+            NotificationTrigger.Instance.TriggerNotification(2);
+            Destroy(this.gameObject);
+            
         }
     }
 }

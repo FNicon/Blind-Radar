@@ -11,8 +11,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dac9c5d9e51a1934ca561605ebdce8b2, type: 3}
   m_Name: Opening_5
   m_EditorClassIdentifier: 
-  actorName: Edrick
+  actorName: Reynold
   dialogues:
-  - '...'
-  actorSprite: {fileID: 21300000, guid: 756ad816274a7984bb7b5d5db38df21c, type: 3}
+  - Fokus kalian! Kita disini untuk mencari harta karun
+  actorSprite: {fileID: 21300000, guid: 3592c89d0b9bb6547b6d6b9a4d0ea68f, type: 3}
   nextDialogue: {fileID: 0}

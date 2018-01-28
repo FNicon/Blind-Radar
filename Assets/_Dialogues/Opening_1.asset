@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actorName: Finiko
   dialogues:
-  - Dah nyampe?
-  actorSprite: {fileID: 21300000, guid: 4505dbe42b8d26941b4f83cb0f1b453c, type: 3}
+  - Kapten kapal kita tenggelam...
+  actorSprite: {fileID: 21300000, guid: 9a0d1fc9e7f235d4999fac21a21599ec, type: 3}
   nextDialogue: {fileID: 11400000, guid: 80f565a85a355e245861c45018482d03, type: 2}

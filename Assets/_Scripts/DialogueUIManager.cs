@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class DialogueUIManager : Singleton<DialogueUIManager> {
 	//Dialgoues
@@ -11,12 +12,14 @@ public class DialogueUIManager : Singleton<DialogueUIManager> {
 	public GameObject dialoguePanel;
 	public GameObject dialogueEndSign;
 	public GameObject parentPanel;
+    public Transform player;
+    public Image fadeOut;
 
 	void Awake() {
 		if (DialogueUIManager.Instance != this) {
 			Destroy(gameObject);
 		}
-		DontDestroyOnLoad(this);
+		//DontDestroyOnLoad(this);
 	}
 
 	public void ActivateDialoguePanel(Dialogue inputDialogue) {
@@ -34,7 +37,15 @@ public class DialogueUIManager : Singleton<DialogueUIManager> {
 		actorImage.gameObject.SetActive(false);
 		dialoguePanel.SetActive(false);
 		parentPanel.SetActive(false);
+        player.DOKill();
+        player.DOMoveX(900, 3f).SetEase(Ease.InQuad);
+        fadeOut.DOColor(Color.black, 3f).SetEase(Ease.Linear).OnComplete(NextScene);
 	}
+
+    void NextScene()
+    {
+        Application.LoadLevel("Main Scene");
+    }
 
 	public void StartTypingDialogue(string sentence) {
 		StopAllCoroutines();

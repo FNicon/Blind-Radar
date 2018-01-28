@@ -15,7 +15,7 @@ public class DialogueManager : Singleton<DialogueManager> {
 		if (DialogueManager.Instance != this) {
 			Destroy(gameObject);
 		}
-		DontDestroyOnLoad(this);
+		//DontDestroyOnLoad(this);
 	}
 
 	//scene load listener credit to: http://answers.unity3d.com/answers/1236899/view.html 

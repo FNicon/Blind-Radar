@@ -13,6 +13,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   actorName: Reynold
   dialogues:
-  - Lum
-  actorSprite: {fileID: 21300000, guid: 74c8879ca22b03c4bb912a5559c63232, type: 3}
+  - Lah emang ini kapal selam ****
+  actorSprite: {fileID: 21300000, guid: 3592c89d0b9bb6547b6d6b9a4d0ea68f, type: 3}
   nextDialogue: {fileID: 11400000, guid: 7a6952727022fdd46a0184c11674d84f, type: 2}
