@@ -9,11 +9,15 @@ public class ScreenManager : MonoBehaviour {
 	public GameObject endingScreen;
 	public GameObject creditScreen;
 	public GameObject titleScreen;
+	public GameObject[] otherScreen;
 	
 	void Start () {
 		isAllowControl = false;
 		titleScreen.SetActive(true);
 		startScreen.SetActive(false);
+		for (int i = 0; i < otherScreen.Length; i++) {
+			otherScreen[i].SetActive(false);
+		}
 		endingScreen.SetActive(false);
 		creditScreen.SetActive(false);
 	}
@@ -22,6 +26,9 @@ public class ScreenManager : MonoBehaviour {
 		isAllowControl = false;
 		titleScreen.SetActive(false);
 		startScreen.SetActive(true);
+		for (int i = 0; i < otherScreen.Length; i++) {
+			otherScreen[i].SetActive(false);
+		}
 		endingScreen.SetActive(false);
 		creditScreen.SetActive(false);
 	}
@@ -30,6 +37,9 @@ public class ScreenManager : MonoBehaviour {
 		isAllowControl = true;
 		titleScreen.SetActive(false);
 		startScreen.SetActive(false);
+		for (int i = 0; i < otherScreen.Length; i++) {
+			otherScreen[i].SetActive(true);
+		}
 		endingScreen.SetActive(false);
 		creditScreen.SetActive(false);
 	}
@@ -38,6 +48,9 @@ public class ScreenManager : MonoBehaviour {
 		isAllowControl = false;
 		titleScreen.SetActive(false);
 		startScreen.SetActive(false);
+		for (int i = 0; i < otherScreen.Length; i++) {
+			otherScreen[i].SetActive(false);
+		}
 		endingScreen.SetActive(true);
 		creditScreen.SetActive(false);
 	}
@@ -46,6 +59,9 @@ public class ScreenManager : MonoBehaviour {
 		isAllowControl = false;
 		titleScreen.SetActive(false);
 		startScreen.SetActive(false);
+		for (int i = 0; i < otherScreen.Length; i++) {
+			otherScreen[i].SetActive(false);
+		}
 		endingScreen.SetActive(false);
 		creditScreen.SetActive(true);
 	}
@@ -54,6 +70,9 @@ public class ScreenManager : MonoBehaviour {
 		isAllowControl = false;
 		titleScreen.SetActive(true);
 		startScreen.SetActive(false);
+		for (int i = 0; i < otherScreen.Length; i++) {
+			otherScreen[i].SetActive(false);
+		}
 		endingScreen.SetActive(false);
 		creditScreen.SetActive(false);
 	}
