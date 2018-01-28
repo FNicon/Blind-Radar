@@ -19,6 +19,12 @@ public class KruManager : Singleton<KruManager> {
     public GameObject driver;
     public GameObject engineer;
     public GameObject gunner;
+    public GameObject[] driverDeadEnabled;
+    public GameObject[] driverDeadDisabled;
+    public GameObject[] gunnerDeadEnabled;
+    public GameObject[] gunnerDeadDisabled;
+    public GameObject[] engineerDeadEnabled;
+    public GameObject[] engineerDeadDisabled;
 
     private void Awake()
     {
@@ -67,30 +73,80 @@ public class KruManager : Singleton<KruManager> {
         {
             driverSlot.SetActive(true);
             driver.SetActive(false);
+            foreach (GameObject go in driverDeadEnabled)
+            {
+                go.SetActive(true);
+            }
+            foreach (GameObject go in driverDeadDisabled)
+            {
+                go.SetActive(false);
+            }
+            SubmarineControl.instance.SetIsAllowedControl(false);
         } else
         {
             driverSlot.SetActive(false);
             driver.SetActive(true);
+            foreach (GameObject go in driverDeadEnabled)
+            {
+                go.SetActive(false);
+            }
+            foreach (GameObject go in driverDeadDisabled)
+            {
+                go.SetActive(true);
+            }
+            SubmarineControl.instance.SetIsAllowedControl(true);
         }
 
         if(gunnerHealth <= 0)
         {
             gunnerSlot.SetActive(true);
             gunner.SetActive(false);
+            foreach (GameObject go in gunnerDeadEnabled)
+            {
+                go.SetActive(true);
+            }
+            foreach (GameObject go in gunnerDeadDisabled)
+            {
+                go.SetActive(false);
+            }
         } else
         {
             gunnerSlot.SetActive(false);
             gunner.SetActive(true);
+            foreach (GameObject go in gunnerDeadEnabled)
+            {
+                go.SetActive(false);
+            }
+            foreach (GameObject go in gunnerDeadDisabled)
+            {
+                go.SetActive(true);
+            }
         }
 
         if(engineerHealth <= 0)
         {
             engineerSlot.SetActive(true);
             engineer.SetActive(false);
+            foreach (GameObject go in engineerDeadEnabled)
+            {
+                go.SetActive(true);
+            }
+            foreach (GameObject go in engineerDeadDisabled)
+            {
+                go.SetActive(false);
+            }
         } else
         {
             engineerSlot.SetActive(false);
             engineer.SetActive(true);
+            foreach (GameObject go in engineerDeadEnabled)
+            {
+                go.SetActive(false);
+            }
+            foreach (GameObject go in engineerDeadDisabled)
+            {
+                go.SetActive(true);
+            }
         }
     }
 

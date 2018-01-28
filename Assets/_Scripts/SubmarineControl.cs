@@ -6,7 +6,7 @@ using DG.Tweening;
 using Com.LuisPedroFonseca.ProCamera2D;
 
 [RequireComponent(typeof(Rigidbody2D))]
-public class SubmarineControl : MonoBehaviour {
+public class SubmarineControl : Singleton<SubmarineControl> {
     public Vector2 initVelocity;
     public Slider horizontalAccelerationSlider;
     public Slider verticalAccelerationSlider;
@@ -22,10 +22,16 @@ public class SubmarineControl : MonoBehaviour {
     private float verticalAcceleration;
     private float currentHealth;
     private Transform lastTorpedo;
+    private bool isAllowedControl = true;
 
-	//public NotificationTrigger notificationHurt;
+    //public NotificationTrigger notificationHurt;
 
-	void Start () {
+    private void Awake()
+    {
+        instance = this;
+    }
+
+    void Start () {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = maxHealth;
 	}
@@ -55,14 +61,47 @@ public class SubmarineControl : MonoBehaviour {
     {
 		//notificationHurt.TriggerNotification (1);
         currentHealth += val;
+        if(currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
         healthFill.fillAmount = currentHealth / 100f;
-        KruManager.Instance.ShipDamaged();
+        if(val < 0)
+        {
+            KruManager.Instance.ShipDamaged();
+        }
+
+        if(currentHealth <= 0)
+        {
+            Dead();
+        }
+        
+    }
+
+    void Dead()
+    {
+
     }
 
     public void FireTorpedo()
     {
         GameObject g = Instantiate(torpedo, torpedoSpawnPoint.position, torpedoSpawnPoint.rotation) as GameObject;
         CameraController.Instance.SetLastTorpedo(g.transform);
+    }
+
+    public void SetIsAllowedControl(bool b)
+    {
+        isAllowedControl = b;
+    }
+
+    public bool GetIsAllowedControl()
+    {
+        return isAllowedControl;
+    }
+
+    public void Repair()
+    {
+        ChangeHealth(25);
     }
 
 }

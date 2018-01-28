@@ -17,26 +17,30 @@ public class GameController : MonoBehaviour {
 	}
 
 	void Update () {
-        if (Time.time >= timestampHorizontal && (Input.GetKey(KeyCode.A)))
+        if(SubmarineControl.Instance.GetIsAllowedControl() == true)
         {
-            horizontalSlider.value--;
-            timestampHorizontal = Time.time + timeBetween;
-        }
-        else if (Time.time >= timestampHorizontal && (Input.GetKey(KeyCode.D)))
-        {
-            horizontalSlider.value++;
-            timestampHorizontal = Time.time + timeBetween;
-        }
+            if (Time.time >= timestampHorizontal && (Input.GetKey(KeyCode.A)))
+            {
+                horizontalSlider.value--;
+                timestampHorizontal = Time.time + timeBetween;
+            }
+            else if (Time.time >= timestampHorizontal && (Input.GetKey(KeyCode.D)))
+            {
+                horizontalSlider.value++;
+                timestampHorizontal = Time.time + timeBetween;
+            }
 
-        if (Time.time >= timestampVertical && (Input.GetKey(KeyCode.S)))
-        {
-            verticalSlider.value--;
-            timestampVertical = Time.time + timeBetween;
+            if (Time.time >= timestampVertical && (Input.GetKey(KeyCode.S)))
+            {
+                verticalSlider.value--;
+                timestampVertical = Time.time + timeBetween;
+            }
+            else if (Time.time >= timestampVertical && (Input.GetKey(KeyCode.W)))
+            {
+                verticalSlider.value++;
+                timestampVertical = Time.time + timeBetween;
+            }
         }
-        else if (Time.time >= timestampVertical && (Input.GetKey(KeyCode.W)))
-        {
-            verticalSlider.value++;
-            timestampVertical = Time.time + timeBetween;
-        }
+        
     }
 }
