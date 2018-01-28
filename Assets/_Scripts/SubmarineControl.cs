@@ -69,6 +69,7 @@ public class SubmarineControl : Singleton<SubmarineControl> {
         if(val < 0)
         {
             KruManager.Instance.ShipDamaged();
+            NotificationTrigger.Instance.TriggerNotification(1);
         }
 
         if(currentHealth <= 0)

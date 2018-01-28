@@ -82,6 +82,7 @@ public class KruManager : Singleton<KruManager> {
                 go.SetActive(false);
             }
             SubmarineControl.instance.SetIsAllowedControl(false);
+            NotificationTrigger.Instance.TriggerNotification(2);
         } else
         {
             driverSlot.SetActive(false);
@@ -109,6 +110,7 @@ public class KruManager : Singleton<KruManager> {
             {
                 go.SetActive(false);
             }
+            NotificationTrigger.Instance.TriggerNotification(2);
         } else
         {
             gunnerSlot.SetActive(false);

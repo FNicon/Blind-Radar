@@ -65,13 +65,14 @@ public class NotificationManager : MonoBehaviour {
 	}
 
 	IEnumerator ShowNotification () {
-		notificationBox.transform.DOLocalMoveX (680, 1).SetEase (Ease.InBack);
-		yield return new WaitForSeconds (1);
+        notificationBox.transform.DORestart();
+		notificationBox.transform.DOLocalMoveX (680, 0.5f).SetEase (Ease.OutBack);
+		yield return new WaitForSeconds (0.5f);
 	}
 
 	IEnumerator HideNotification () {
-		notificationBox.transform.DOLocalMoveX (1500, 1).SetEase (Ease.OutBack);
-		yield return new WaitForSeconds (1);
+		notificationBox.transform.DOLocalMoveX (1500, 0.5f).SetEase (Ease.InBack);
+		yield return new WaitForSeconds (0.5f);
 	}
 
 	void Endnotification() {
