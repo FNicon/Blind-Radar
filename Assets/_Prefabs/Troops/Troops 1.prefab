@@ -236,8 +236,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torpedo: {fileID: 1927390196246070, guid: f10bd04528ae1f848b565f42fed27f16, type: 2}
   torpedoSpawnPoint: {fileID: 4290524706181808}
-  shootDelay: 2
-  shootWait: 10
+  shootDelay: 4
+  shootWait: 20
 --- !u!114 &114559349902087848
 MonoBehaviour:
   m_ObjectHideFlags: 1

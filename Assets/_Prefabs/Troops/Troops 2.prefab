@@ -623,8 +623,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torpedo: {fileID: 1927390196246070, guid: f10bd04528ae1f848b565f42fed27f16, type: 2}
   torpedoSpawnPoint: {fileID: 4701889342579014}
-  shootDelay: 2
-  shootWait: 10
+  shootDelay: 4
+  shootWait: 20
 --- !u!114 &114747388610723348
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -638,8 +638,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   torpedo: {fileID: 1927390196246070, guid: f10bd04528ae1f848b565f42fed27f16, type: 2}
   torpedoSpawnPoint: {fileID: 4917821517831268}
-  shootDelay: 2
-  shootWait: 10
+  shootDelay: 4
+  shootWait: 20
 --- !u!114 &114844365136184008
 MonoBehaviour:
   m_ObjectHideFlags: 1

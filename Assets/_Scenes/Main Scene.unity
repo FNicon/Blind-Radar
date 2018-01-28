@@ -5872,7 +5872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Shader: {fileID: 4800000, guid: 22fe62a5d4de91a4995c1363cbc2492e, type: 3}
   Mode: 1
-  Timer: 505.81628
+  Timer: 690.90674
   Speed: 1
   Frequency: 12
   Amplitude: 0.01
@@ -6083,6 +6083,7 @@ MonoBehaviour:
   - {fileID: 1047871288607390, guid: 5dbaa4ff2245c4744978e374e4acda31, type: 2}
   - {fileID: 1357444313471188, guid: 0c0d7ccb086eac14fb6ee26202b68e50, type: 2}
   - {fileID: 1942471684012422, guid: f5dc3319900a6a54c9e83c1495cbc691, type: 2}
+  sequenceSpawn: 1
 --- !u!1 &817933464
 GameObject:
   m_ObjectHideFlags: 0
@@ -8073,6 +8074,7 @@ MonoBehaviour:
   yMax: 0
   spawnThings:
   - {fileID: 1315128068354418, guid: 058142e9a25bdf941a32fd3c7513a3bc, type: 2}
+  sequenceSpawn: 0
 --- !u!1 &1288260191
 GameObject:
   m_ObjectHideFlags: 0
@@ -9598,6 +9600,46 @@ MonoBehaviour:
   OnEnterMessage: EnterSlot
   OnExitMessage: ExitSlot
   OnDropMessage: DropSlot
+--- !u!1 &1644424144
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1644424145}
+  - component: {fileID: 1644424146}
+  m_Layer: 0
+  m_Name: Boss Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1644424145
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1644424144}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 4.526549, y: -4.9765315, z: -0.171875}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1644424146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1644424144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8a00bfa3f180134fba4f94f2aa3282a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1653375615
 GameObject:
   m_ObjectHideFlags: 0
@@ -10182,6 +10224,7 @@ MonoBehaviour:
   yMax: 0
   spawnThings:
   - {fileID: 1956592447517916, guid: 933114cbef2404e44ab187ae6f104ff4, type: 2}
+  sequenceSpawn: 0
 --- !u!1 &1857670049
 GameObject:
   m_ObjectHideFlags: 0

@@ -28,7 +28,7 @@ public class EnemyBehaviour : MonoBehaviour {
         firstTime = false;
     }
 
-	public void FireTorpedo() {
+	void FireTorpedo() {
 		if (gameObject.transform.position.x > player.transform.position.x) {
 			Instantiate (torpedo, torpedoSpawnPoint.position, Quaternion.Euler (new Vector3 (0, 0, 0)));
 		} else {

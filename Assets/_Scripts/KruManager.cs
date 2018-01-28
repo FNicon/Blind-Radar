@@ -152,9 +152,9 @@ public class KruManager : Singleton<KruManager> {
 
     public void Swap(KruType kru1, KruType kru2)
     {
-        driver.GetComponent<DragMe>().EndDrag();
-        gunner.GetComponent<DragMe>().EndDrag();
-        engineer.GetComponent<DragMe>().EndDrag();
+        //driver.GetComponent<DragMe>().EndDrag();
+        //gunner.GetComponent<DragMe>().EndDrag();
+        //engineer.GetComponent<DragMe>().EndDrag();
         if (kru1 == KruType.Driver && kru2 == KruType.Gunner || kru1 == KruType.Gunner && kru2 == KruType.Driver)
         {
             float tmp = driverHealth;

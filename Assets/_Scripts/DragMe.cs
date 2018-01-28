@@ -36,7 +36,12 @@ public class DragMe : MonoBehaviour {
 		}
 	}
 
-	void Update () {
+    private void OnDisable()
+    {
+        EndDrag();
+    }
+
+    void Update () {
 		
 	}
 
